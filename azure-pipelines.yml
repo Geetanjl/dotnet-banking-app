@@ -20,10 +20,10 @@ steps:
     command: 'restore'
     restoreSolution: 'ApnaBank/ApnaBank.sln'
     feedsToUse: 'select'
-    configuration: 'Debug'
+    configuration: 'Release'
 - task: MSBuild@1
   inputs:
     solution: 'ApnaBank/ApnaBank.sln'
     platform: AnyCPU
-    configuration: 'Debug'
+    configuration: 'Release'
     clean: true
