@@ -10,7 +10,7 @@ pool:
   vmImage: windows-latest
 
 variables:
-  Configuration: 'Release'
+  Configuration: 'Debug'
 steps:
 - task: NuGetToolInstaller@1
   inputs:
@@ -18,12 +18,12 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreSolution: '**/*.sln'
+    restoreSolution: 'ApnaBank.sln'
     feedsToUse: 'select'
-    configuration: 'Release'
+    configuration: 'Debug'
 - task: MSBuild@1
   inputs:
-    solution: '**/*.sln'
-    platform: 
-    configuration: 'Release'
+    solution: 'ApnaBank.sln'
+    platform: AnyCPU
+    configuration: 'Debug'
     clean: true
