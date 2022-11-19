@@ -9,8 +9,6 @@ trigger:
 pool:
   vmImage: windows-latest
 
-variables:
-  Configuration: 'Debug'
 steps:
 - task: NuGetToolInstaller@1
   inputs:
@@ -24,6 +22,6 @@ steps:
 - task: MSBuild@1
   inputs:
     solution: 'ApnaBank/ApnaBank.sln'
-    platform: AnyCPU
+    platform: 'Any CPU'
     configuration: 'Release'
     clean: true
